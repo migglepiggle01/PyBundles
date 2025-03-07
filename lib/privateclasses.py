@@ -1,5 +1,4 @@
-import getpass
-from privacyutils import GetPass
+from lib.privacyutils import GetPass
 
 from cryptography.fernet import Fernet
 

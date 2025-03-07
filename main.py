@@ -1,20 +1,16 @@
-## IMPORTANT: ADD LIB TO SYS PATH ##
-import sys
-sys.path.append('lib')
-
-
 #######################
 #       IMPORTS       #
 #######################
 
-from customstructs import PreciseStruct, UnpreciseUnion
-from datatypes import List
-from privateclasses import SecureStorage
-from privacyutils import GetPass
+from lib.customstructs import PreciseStruct, UnpreciseUnion
+from lib.datatypes import List
+from lib.privateclasses import SecureStorage
+from lib.privacyutils import GetPass
+from lib.geometry import *
 
-import getpass
+def main(): 
 
-def main():    
+    '''
 
     list_a = List([])
     list_a.append("val", "other val", 1, 2, 3)
@@ -47,6 +43,18 @@ def main():
     decrypted_data = secure_storage.load()
     if decrypted_data:
         print("Decrypted Data:", decrypted_data)
+
+    '''
+
+    # Create a triangle with specific points
+    t = Geometry2D.Triangle((0, 0), (0, 0), (0, 0))  # Points for an equilateral triangle
+    print(t)
+
+    # Create a plane and add the triangle to it
+    plane = Plane2D(name="My Plane")
+    plane.add_shape(t)
+    print(plane.output())
+
 
 if __name__ == "__main__":
     main()
